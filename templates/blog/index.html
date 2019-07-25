@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for post in posts %}
+        <!-- Card -->
+        <div class="card">
+            <!-- Card content -->
+            <div class="card-body">
+            <!-- Title -->
+            <h3 class="card-title"><b>{{ post.title }}</b></h3>
+            <!-- Text -->
+            <p class="card-text">{{ post.body_preview }} ...</p>
+            <!-- Button -->
+            <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Go for magic!</a>
+            </div>
+        </div>
+        <br>
+        <!-- Card -->
+    {% endfor %}
+{% endblock %}
